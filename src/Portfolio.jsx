@@ -4,6 +4,7 @@ import {
   Mail,
   MapPin,
   Phone,
+  Calendar,
   ArrowRight,
   Database,
   BarChart3,
@@ -22,6 +23,7 @@ import {
 const Section = ({ id, title, subtitle, children }) => (
   <section id={id} className="scroll-mt-24 py-14 md:py-20">
     <div className="max-w-6xl mx-auto px-4">
+
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -42,9 +44,11 @@ const Section = ({ id, title, subtitle, children }) => (
       <div className="mt-8">
         {children}
       </div>
+
     </div>
   </section>
 );
+
 
 const Chip = ({ children }) => (
   <span className="inline-flex items-center rounded-full border px-3 py-1 text-sm leading-5 shadow-sm bg-white/70 dark:bg-zinc-900/60 backdrop-blur">
@@ -52,18 +56,22 @@ const Chip = ({ children }) => (
   </span>
 );
 
+
 const Card = ({ children }) => (
   <div className="rounded-2xl border bg-white/70 dark:bg-zinc-900/50 shadow-sm hover:shadow-md transition-shadow p-6">
     {children}
   </div>
 );
 
+
 /* ---------- Page ---------- */
 
 export default function Portfolio() {
+
   const [projectCategory, setProjectCategory] = useState("data");
 
-  // ---------- Basic Information ----------
+
+  /* ---------- Basic Information ---------- */
 
   const name = "Mohammed ElSaeid Elantably";
 
@@ -78,6 +86,8 @@ export default function Portfolio() {
 
   const phone = "01119488149";
 
+  const dob = "Feb 21, 2005";
+
   const linkedin =
     "https://www.linkedin.com/in/mohamed--elantably";
 
@@ -88,9 +98,10 @@ export default function Portfolio() {
     "https://drive.google.com/file/d/1wUWlg3_FfQ-Z1r2JefLAEMBnB9Tn77-N/view?usp=sharing";
 
 
-  // ---------- Services ----------
+  /* ---------- Services ---------- */
 
   const services = [
+
     {
       icon: <Clipboard className="w-8 h-8 text-indigo-500" />,
       title: "Data Entry",
@@ -133,7 +144,6 @@ export default function Portfolio() {
         "Using SQL for efficient data extraction, manipulation, querying, and management from structured datasets.",
     },
 
-    // Full Stack .NET Services
     {
       icon: <Code2 className="w-8 h-8 text-cyan-500" />,
       title: "Web Application Development",
@@ -161,12 +171,14 @@ export default function Portfolio() {
       desc:
         "Designing and working with relational databases using SQL Server for data storage, querying, and application integration.",
     },
+
   ];
 
 
-  // ---------- Skills ----------
+  /* ---------- Skills ---------- */
 
   const skills = [
+
     {
       group: "Data Analysis",
       items: [
@@ -225,12 +237,14 @@ export default function Portfolio() {
         "English – Good",
       ],
     },
+
   ];
 
 
-  // ---------- Data Analysis Projects ----------
+  /* ---------- Data Analysis Projects ---------- */
 
   const dataProjects = [
+
     {
       name:
         "CRM Database System (BRD + Use Case + SQL DDL)",
@@ -253,6 +267,7 @@ export default function Portfolio() {
       ],
     },
 
+
     {
       name:
         "Salary Data Analysis — San Francisco (2011–2014)",
@@ -274,6 +289,7 @@ export default function Portfolio() {
         "matplotlib",
       ],
     },
+
 
     {
       name:
@@ -300,6 +316,7 @@ Key steps:
         "scikit-learn",
       ],
     },
+
 
     {
       name:
@@ -328,6 +345,7 @@ Key steps:
       ],
     },
 
+
     {
       name:
         "📺 Netflix Data Analysis",
@@ -354,15 +372,49 @@ Key steps:
         "wordcloud",
       ],
     },
+
+
+    /* ---------- Graduation Project ---------- */
+
+    {
+      name:
+        "🎓 Graduation Project — UK Railway Refund & Delay Analysis",
+
+      blurb: `A team-based end-to-end Business Intelligence project analyzing UK railway journeys, ticket transactions, refund behavior, and operational delays.
+
+The project included data cleaning, ETL, data modeling, and Power BI visualization to uncover refund patterns, identify loss-making routes, and evaluate operational performance.
+
+🔹 Project Type: Team Project.
+🔹 Tools: Power BI, Data Modeling, ETL, Data Cleaning, CSV.`,
+
+      link:
+        "https://github.com/Mohamed-saeid2005/DEPI_Dashboard_Graduation_Project",
+
+      images: [
+        "https://github.com/user-attachments/assets/cad4a208-7ec2-48f7-8917-e0d60f25a25d",
+        "https://github.com/user-attachments/assets/d46466a4-0547-45e6-937d-29fe9f37cf58",
+        "https://github.com/user-attachments/assets/599c6955-198a-45cd-9b74-ba64378d955c",
+        "https://github.com/user-attachments/assets/5d891539-9d47-472f-abd2-cd2e9730a43d",
+      ],
+
+      stack: [
+        "Power BI",
+        "Data Modeling",
+        "ETL",
+        "Data Cleaning",
+        "CSV",
+      ],
+    },
+
   ];
 
 
-  // ---------- Full Stack .NET Projects ----------
+  /* ---------- Full Stack .NET Projects ---------- */
 
   const dotnetProjects = [];
 
 
-  // ---------- Currently Visible Projects ----------
+  /* ---------- Visible Projects ---------- */
 
   const visibleProjects =
     projectCategory === "data"
@@ -371,7 +423,9 @@ Key steps:
 
 
   return (
+
     <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-black text-zinc-900 dark:text-zinc-100">
+
 
       {/* =====================================================
           Navbar
@@ -445,6 +499,7 @@ Key steps:
 
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
 
+
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -454,6 +509,7 @@ Key steps:
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
               {name}
             </h1>
+
 
             <p className="mt-3 text-xl md:text-2xl font-medium text-muted-foreground">
               {title}
@@ -467,10 +523,18 @@ Key steps:
                 {location}
               </Chip>
 
+
+              <Chip>
+                <Calendar className="w-4 h-4 mr-2" />
+                {dob}
+              </Chip>
+
+
               <Chip>
                 <Mail className="w-4 h-4 mr-2" />
                 {email}
               </Chip>
+
 
               <Chip>
                 <Phone className="w-4 h-4 mr-2" />
@@ -556,6 +620,7 @@ Key steps:
             Full-Stack .NET Developer | Data Analyst | DEPI Fellow
           </h3>
 
+
           <p className="mt-3 text-sm md:text-base text-muted-foreground leading-7">
             {aboutText}
           </p>
@@ -600,6 +665,7 @@ Key steps:
 
         <div className="grid md:grid-cols-2 gap-6">
 
+
           {/* Education */}
 
           <Card>
@@ -607,6 +673,7 @@ Key steps:
             <h3 className="font-semibold">
               🎓 Education
             </h3>
+
 
             <p className="mt-2 text-sm text-muted-foreground">
 
@@ -640,6 +707,7 @@ Key steps:
             <h3 className="font-semibold">
               💼 Experience
             </h3>
+
 
             <ul className="mt-2 text-sm text-muted-foreground space-y-2 list-disc list-inside">
 
@@ -703,19 +771,23 @@ Key steps:
             Full Stack .NET
           </h3>
 
+
           <p className="mt-2 text-sm text-muted-foreground">
             Digital Egypt Pioneers Initiative (DEPI)
           </p>
 
+
           <p className="mt-1 text-sm text-muted-foreground">
             Started July 2026
           </p>
+
 
           <div className="mt-4 flex flex-wrap gap-2">
 
             <Chip>
               In Progress
             </Chip>
+
 
             <Chip>
               Expected Completion: December 2026
@@ -765,9 +837,11 @@ Key steps:
                     {s.icon}
                   </div>
 
+
                   <h3 className="font-semibold text-lg">
                     {s.title}
                   </h3>
+
 
                   <p className="mt-2 text-sm text-muted-foreground">
                     {s.desc}
@@ -790,7 +864,10 @@ Key steps:
           Skills
       ===================================================== */}
 
-      <Section id="skills" title="Skills">
+      <Section
+        id="skills"
+        title="Skills"
+      >
 
         <div className="grid md:grid-cols-2 gap-6">
 
@@ -801,6 +878,7 @@ Key steps:
               <h3 className="font-semibold text-lg">
                 {sg.group}
               </h3>
+
 
               <div className="mt-4 flex flex-wrap gap-2">
 
@@ -832,6 +910,7 @@ Key steps:
         title="Projects"
         subtitle="Selected work and practical projects"
       >
+
 
         {/* Project Category Switcher */}
 
@@ -875,7 +954,10 @@ Key steps:
 
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{
+                  opacity: 0,
+                  y: 10,
+                }}
                 whileInView={{
                   opacity: 1,
                   y: 0,
@@ -936,7 +1018,7 @@ Key steps:
                           key={idx}
                           src={src}
                           alt={`${p.name} screenshot ${idx + 1}`}
-                          className="rounded-lg border"
+                          className="w-full h-40 md:h-44 object-cover rounded-lg border"
                         />
 
                       ))}
@@ -946,7 +1028,7 @@ Key steps:
                   )}
 
 
-                  {/* Video */}
+                  {/* Video Link */}
 
                   {p.video && (
 
@@ -1005,9 +1087,11 @@ Key steps:
 
               <Code2 className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
 
+
               <h3 className="text-xl font-semibold">
                 Full Stack .NET Projects
               </h3>
+
 
               <p className="mt-2 text-sm text-muted-foreground max-w-lg mx-auto">
                 Full Stack .NET projects will be showcased here as they are
@@ -1015,10 +1099,13 @@ Key steps:
                 and database-driven applications.
               </p>
 
+
               <div className="mt-5">
+
                 <Chip>
                   Projects Coming Soon
                 </Chip>
+
               </div>
 
             </div>
@@ -1046,9 +1133,11 @@ Key steps:
             Data Analyst Specialist
           </h3>
 
+
           <p className="mt-2 text-sm text-muted-foreground">
             Digital Egypt Pioneers Initiative (DEPI)
           </p>
+
 
           <p className="mt-1 text-sm text-muted-foreground">
             June – December 2025
@@ -1101,6 +1190,7 @@ Key steps:
 
           </Card>
 
+
           <Card>
 
             <p className="text-sm text-muted-foreground italic">
@@ -1125,6 +1215,7 @@ Key steps:
 
         <div className="grid md:grid-cols-3 gap-6">
 
+
           {/* Email */}
 
           <Card>
@@ -1138,6 +1229,7 @@ Key steps:
                 <p className="text-sm text-muted-foreground">
                   Email
                 </p>
+
 
                 <a
                   className="font-medium"
@@ -1153,7 +1245,7 @@ Key steps:
           </Card>
 
 
-          {/* Phone / WhatsApp */}
+          {/* WhatsApp */}
 
           <Card>
 
@@ -1167,12 +1259,14 @@ Key steps:
                   Phone / WhatsApp
                 </p>
 
+
                 <a
                   className="font-medium block"
                   href={`tel:${phone}`}
                 >
                   {phone}
                 </a>
+
 
                 <a
                   className="text-blue-600 font-medium"
@@ -1204,6 +1298,7 @@ Key steps:
                   LinkedIn
                 </p>
 
+
                 <a
                   className="font-medium"
                   href={linkedin}
@@ -1234,6 +1329,7 @@ Key steps:
                   Location
                 </p>
 
+
                 <p className="font-medium">
                   {location}
                 </p>
@@ -1260,6 +1356,7 @@ Key steps:
           <p>
             © {new Date().getFullYear()} {name}. All rights reserved.
           </p>
+
 
           <div className="flex gap-4">
 
