@@ -496,7 +496,7 @@ The project included data cleaning, ETL, data modeling, and Power BI visualizati
 
   return (
 
-    <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-black text-zinc-900 dark:text-zinc-100">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-black text-zinc-900 dark:text-zinc-100">
 
       {/* =====================================================
           Navbar
@@ -555,6 +555,7 @@ The project included data cleaning, ETL, data modeling, and Power BI visualizati
 
       </header>
 
+      <main className="flex-1">
 
       {page === "home" && (
 
@@ -1386,38 +1387,33 @@ The project included data cleaning, ETL, data modeling, and Power BI visualizati
 
       )}
 
+      </main>
+
       {/* =====================================================
           Footer
       ===================================================== */}
 
-      <footer className="border-t py-10 text-sm text-muted-foreground">
+      {page === "contact" && (
+        <footer className="border-t py-3 text-xs text-muted-foreground shrink-0">
+          <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
+            <p>
+              © {new Date().getFullYear()} {name}. All rights reserved.
+            </p>
 
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3">
-
-          <p>
-            © {new Date().getFullYear()} {name}. All rights reserved.
-          </p>
-
-
-          <div className="flex gap-4">
-
-            <button type="button" onClick={() => navigateTo("about")}>
-              About
-            </button>
-
-            <button type="button" onClick={() => navigateTo("projects")}>
-              Projects
-            </button>
-
-            <button type="button" onClick={() => navigateTo("contact")}>
-              Contact
-            </button>
-
+            <div className="flex gap-4">
+              <button type="button" onClick={() => navigateTo("about")} className="hover:text-zinc-100 transition-colors">
+                About
+              </button>
+              <button type="button" onClick={() => navigateTo("projects")} className="hover:text-zinc-100 transition-colors">
+                Projects
+              </button>
+              <button type="button" onClick={() => navigateTo("contact")} className="hover:text-zinc-100 transition-colors">
+                Contact
+              </button>
+            </div>
           </div>
-
-        </div>
-
-      </footer>
+        </footer>
+      )}
 
     </div>
   );
