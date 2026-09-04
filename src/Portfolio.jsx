@@ -73,12 +73,12 @@ export default function Portfolio() {
 
   /* ---------- Basic Information ---------- */
 
-  const name = "Mohammed ElSaeid Elantably";
+  const name = "Mohammed Elsaeid Elantably";
 
   const title = "Full-stack .NET & Data Analyst";
 
   const aboutText =
-    "Commerce student at Kafr El Sheikh University and a Digital Egypt Pioneers Initiative (DEPI) Fellow. I specialize in Full-Stack .NET Web Development using C#, .NET Core Web API, MVC, and SQL Server, alongside Data Analysis using Microsoft Excel and visualization tools. My focus is on combining web technologies and data insights to develop structured, scalable applications and support data-driven decision-making.";
+    "Commerce student at Kafr El Sheikh University and a Digital Egypt Pioneers Initiative (DEPI) Fellow. I completed Round 3 of the Data Analysis Specialist Track, gaining hands-on experience in data analysis, visualization, and business intelligence. I also applied for the current Round 5, where I am pursuing the Full-Stack .NET Web Development Track. Alongside data analysis, I am developing my skills in C#, .NET Core, ASP.NET Core Web API, MVC, and SQL Server, with a focus on building structured applications and supporting data-driven decision-making.";
 
   const location = "Kafr Elsheikh, Egypt";
 
